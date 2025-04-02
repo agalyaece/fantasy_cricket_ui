@@ -1,5 +1,5 @@
-// const baseUrl = "http://192.168.1.2:3000/";
-const baseUrl = "https://fantasy-cricket-ws.onrender.com/";
+const baseUrl = "http://192.168.1.2:3000/";
+// const baseUrl = "https://fantasy-cricket-ws.onrender.com/";
 
 const addPlayerUrl = baseUrl + "administration/players/add_player";
 const getPlayersUrl = baseUrl + "administration/players/get_players";

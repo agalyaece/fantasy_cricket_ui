@@ -86,6 +86,8 @@ class _AddTeamsState extends State<AddTeams> {
                         "player_role": player.values.first.key,
                         "credits": player.values.first.value,
                         "team_short_name": _enteredTeamShortName,
+                        "captain": false,
+                        "vice_captain": false,
                       },
                     )
                     .toList(),
@@ -242,7 +244,6 @@ class _AddTeamsState extends State<AddTeams> {
                           onChanged: (newValue) {
                             setState(() {
                               _enteredCredits = int.tryParse(newValue) ?? 0;
-                                 
                             });
                           },
                           initialValue: 0.toString(),
@@ -266,15 +267,16 @@ class _AddTeamsState extends State<AddTeams> {
                   ElevatedButton(
                     onPressed:
                         _selectedPlayer != null &&
-                            _selectedRole != null &&
-                            _enteredCredits >= 1
-                          ? () {
-                            _addPlayerToTeam();
-                            setState(() {
-                              _enteredCredits = 0; // Reset the credit field to empty
-                            });
+                                _selectedRole != null &&
+                                _enteredCredits >= 1
+                            ? () {
+                              _addPlayerToTeam();
+                              setState(() {
+                                _enteredCredits =
+                                    0; // Reset the credit field to empty
+                              });
                             }
-                          : null,
+                            : null,
                     child: Text('Add Player to Team'),
                   ),
                   SizedBox(height: 20),
